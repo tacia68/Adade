@@ -1,0 +1,7 @@
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>devtitans.adade</name>
+        <version>1</version>
+        <fqname>IAdade/default</fqname>
+    </hal>
+</manifest>

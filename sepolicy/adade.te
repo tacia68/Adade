@@ -1,0 +1,28 @@
+# Cria o tipo/rótulo do serviço AIDL (rotulado no arquivo service_contexts)
+type adade_service, service_manager_type, vendor_service;
+
+# Cria o tipo/rótulo do daemon (rotulado no arquivo file_contexts)
+type adade_daemon, domain;
+type adade_daemon_exec, exec_type, vendor_file_type, file_type;
+
+# Permissões
+init_daemon_domain(adade_daemon);                        # O daemon será iniciado pelo init
+vndbinder_use(adade_daemon);                             # O daemon usará o binder
+allow adade_daemon servicemanager:binder { call transfer };
+
+add_service(adade_daemon, adade_service)             # O daemon irá criar o serviço do adade
+
+# Permite acesso aos arquivos do /sys
+allow adade_daemon sysfs:file { getattr open read write };
+
+# Cria e Permite leitura da propriedades de sistema do adade
+vendor_public_prop(vendor_adade_prop)
+allow adade_daemon vendor_adade_prop:file { open getattr map read };
+
+# Permite que apps privilegiados acessem o daemon e o serviço
+allow platform_app adade_daemon:binder call;
+allow platform_app adade_service:service_manager find;
+
+# Permite que apps normais acessem o daemon e o serviço
+allow untrusted_app adade_daemon:binder call;
+allow untrusted_app adade_service:service_manager find;

@@ -1,0 +1,2 @@
+# Define o rótulo da propriedade de sistema
+vendor.devtitans.adade.allow_simulated  u:object_r:vendor_adade_prop:s0
