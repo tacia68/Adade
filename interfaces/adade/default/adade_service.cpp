@@ -7,28 +7,18 @@ namespace aidl::devtitans::adade {
         return ndk::ScopedAStatus::ok();
     }
 
-    /*ndk::ScopedAStatus SmartlampService::getLed(int32_t* _aidl_return) {
-        *_aidl_return = this->smartlamp.getLed();
-        LOG(INFO) << "getLed(): " << *_aidl_return;
-        return ndk::ScopedAStatus::ok();
-    }
-
-    ndk::ScopedAStatus SmartlampService::setLed(int32_t in_ledValue, bool* _aidl_return) {
-        *_aidl_return = this->smartlamp.setLed(in_ledValue);
-        LOG(INFO) << "setLed( " << in_ledValue << "): " << (*_aidl_return ? "true" : "false");
-        return ndk::ScopedAStatus::ok();
-    }*/
-
     ndk::ScopedAStatus AdadeService::getLuminosity(int32_t* _aidl_return) {
         *_aidl_return = this->adade.getLuminosity();
         LOG(INFO) << "getLuminosity(): " << *_aidl_return;
         return ndk::ScopedAStatus::ok();
     }
+
     ndk::ScopedAStatus AdadeService::getTemperature(int32_t* _aidl_return) {
         *_aidl_return = this->adade.getTemperature();
         LOG(INFO) << "getTemperature(): " << *_aidl_return;
         return ndk::ScopedAStatus::ok();
     }
+
     ndk::ScopedAStatus AdadeService::getHumidity(int32_t* _aidl_return) {
         *_aidl_return = this->adade.getHumidity();
         LOG(INFO) << "getHumidity(): " << *_aidl_return;

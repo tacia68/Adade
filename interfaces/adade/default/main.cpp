@@ -1,6 +1,6 @@
 #include "adade_service.h"
 
-using namespace aidl::devtitans::adade;                // AdadeService (adade_service.cpp)
+using namespace aidl::devtitans::adade;                // SmartlampService (smartlamp_service.cpp)
 using namespace std;                                       // std::shared_ptr
 using namespace ndk;                                       // ndk::SharedRefBase
 
@@ -11,7 +11,7 @@ int main() {
 
     shared_ptr<AdadeService> adade_service = SharedRefBase::make<AdadeService>();
 
-    const string instance = std::string() + IAdade::descriptor + "/default";   // devtitans.adade.Iadade/default
+    const string instance = std::string() + IAdade::descriptor + "/default";   // devtitans.smartlamp.ISmartlamp/default
     binder_status_t status = AServiceManager_addService(adade_service->asBinder().get(), instance.c_str());
     CHECK(status == STATUS_OK);
 

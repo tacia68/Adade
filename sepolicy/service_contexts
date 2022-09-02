@@ -1,2 +1,2 @@
-# Define o rótulo do serviço AIDL adade
+# Define o rótulo do serviço AIDL smartlamp
 devtitans.adade.IAdade/default  u:object_r:adade_service:s0

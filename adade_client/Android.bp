@@ -1,6 +1,6 @@
 cc_binary {
-    name:         "adade_cliente",
-    srcs:         [ "adade_cliente.cpp" ],
+    name:         "adade_client",
+    srcs:         [ "adade_client.cpp" ],
 
     shared_libs:  [ "adade_lib" ],
     required:     [ "adade_lib" ],
