@@ -24,3 +24,5 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/devtitans/adade/device_fram
 
 # Cliente de Linha de Comando para o Serviço Adade
 PRODUCT_PACKAGES += adade_service_client
+# Manager
+PRODUCT_PACKAGES += devtitans.adademanager
