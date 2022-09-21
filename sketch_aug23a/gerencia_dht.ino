@@ -6,8 +6,18 @@ void begin_dht(){
   dht.begin();
   };
 String getTemperature(){
-  return TAG_RES + " " + TAG_TEM + " " + String(dht.readTemperature()*100,0)+"\n";
+  return TAG_RES + " " + TAG_TEM + " " + String(temp,0)+"\n";
   };
 String gethumidity(){
-  return TAG_RES + " " + TAG_HUM + " " + String(dht.readHumidity()*100,0)+"\n";
+  return TAG_RES + " " + TAG_HUM + " " + String(humi,0)+"\n";
   };
+
+String getLogTemperature(){
+  temp = dht.readTemperature()*100; // Atualiza temperatura
+return String(temp,0);
+}
+
+String getLogHumidity(){
+  humi = dht.readHumidity()*100; // Atualiza humidade
+return String(humi,0);
+}
